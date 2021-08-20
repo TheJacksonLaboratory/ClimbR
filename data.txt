@@ -1,4 +1,0 @@
-- path: getToken.R
-  name: getToken
-  description: A function to get a token from climb
-  type: txt
