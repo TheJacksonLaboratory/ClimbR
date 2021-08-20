@@ -1,0 +1,56 @@
+userFirstName,userLastName,userName,roleKey,roleName,isStudyAdministration,createdBy,dateCreated,modifiedBy,dateModified
+Amanda,Riley,amariley31,109,Research Assistant,FALSE,amariley31,2017-05-18T14:59:22.467,amariley31,2017-05-18T14:59:22.467
+Anabella,Muskus,amuskus,109,Research Assistant,FALSE,amuskus,2020-11-12T16:42:11.72,amuskus,2020-11-12T16:42:11.72
+Amy,Bell,Amy,109,Research Assistant,FALSE,Amy,2020-05-08T23:56:11.96,Amy,2020-05-08T23:56:11.96
+Annat,Haber,annat.haber,101,Administrator,FALSE,annat.haber,2019-03-25T18:20:35.933,aoblak,2021-06-30T14:33:11.573
+Adrian,Oblak,aoblak,101,Administrator,FALSE,aoblak,2017-01-27T14:04:43.08,hwilliams,2017-06-02T18:49:53.687
+Asli,Uyar,asli,161,Postdoc,FALSE,asli,2019-01-03T17:24:38.277,asli,2019-01-03T17:24:38.277
+Daria,Bednarczyk,bednad,109,Research Assistant,FALSE,system,2018-02-20T14:54:12.027,system,2018-02-20T14:54:12.027
+Melisa ,Belanger,belanm,109,Research Assistant,FALSE,belanm,2018-11-19T13:27:12.957,belanm,2018-11-19T13:27:12.957
+Benjamin,Logsdon,blogsdon907,109,Research Assistant,FALSE,blogsdon907,2017-06-22T20:34:34.23,blogsdon907,2017-06-22T20:34:34.23
+Brian,McCarthy,bmccarthy,109,Research Assistant,FALSE,bmccarthy,2018-02-07T21:06:49.127,bmccarthy,2018-02-07T21:06:49.127
+Bruce,Lamb,btlamb,110,PI,FALSE,btlamb,2017-05-18T12:43:51.99,aoblak,2017-05-30T17:12:31.21
+Rebecca,Buchanan,buchar,109,Research Assistant,FALSE,system,2017-07-18T16:55:23.96,system,2017-07-18T16:55:23.96
+Callan,O'Connor,callano,161,Postdoc,FALSE,callano,2019-01-14T17:05:05.147,callano,2019-01-14T17:05:05.147
+Cory,Diemler,cdiemler,109,Research Assistant,FALSE,cdiemler,2018-11-20T15:40:40.377,cdiemler,2018-11-20T15:40:40.377
+Charlize,Castro,charlize.castro,109,Research Assistant,FALSE,system,2021-06-21T13:31:47.54,aoblak,2021-06-30T15:00:52.303
+Sumana,Chintalapudi,chints,161,Postdoc,FALSE,chints,2017-10-26T15:18:13.763,chints,2017-10-26T15:18:13.763
+Chris,Lloyd,chris.lloyd,109,Research Assistant,FALSE,chris.lloyd,2019-04-17T11:12:58.247,chris.lloyd,2019-04-17T11:12:58.247
+Cindy,Ingraham,cmingrah1,109,Research Assistant,FALSE,cmingrah1,2017-04-21T15:50:19.107,cmingrah1,2017-04-21T15:50:19.107
+Travis,Cossette,cosset,109,Research Assistant,FALSE,cosset,2019-10-03T13:07:35.583,aoblak,2021-06-30T15:01:48.577
+David,Jones,drjones1,109,Research Assistant,FALSE,drjones1,2017-05-26T13:27:52.987,drjones1,2017-05-26T13:27:52.987
+Eddie,Stage,ecstage,109,Research Assistant,FALSE,ecstage,2017-06-19T18:11:59.543,ecstage,2017-06-19T18:11:59.543
+Brian,Eisinger,eisinger,161,Postdoc,FALSE,eisinger,2018-01-10T14:40:04.017,aoblak,2018-01-17T18:43:00.017
+Kevin,Elk,elkk,109,Research Assistant,FALSE,elkk,2020-11-13T14:45:38.143,elkk,2020-11-13T14:45:38.143
+Dylan,Garceau,garceaudt0,109,Research Assistant,FALSE,system,2018-07-31T12:01:32.29,aoblak,2021-06-30T15:00:11.18
+Gareth,Howell,ghowell,110,PI,FALSE,ghowell,2017-06-30T19:50:11.397,hwilliams,2017-10-10T19:21:24.317
+Amanda,Hewes,Hewesaa3,124,Lab Manager,FALSE,Hewesaa3,2018-02-15T20:01:07.783,hwilliams,2018-02-15T20:42:55.667
+Harriet,Williams,hwilliams,109,Research Assistant,FALSE,hwilliams,2017-01-27T14:04:46.627,aoblak,2021-06-30T15:00:11.18
+Isaak,Emery,IsaakE,109,Research Assistant,FALSE,IsaakE,2019-08-19T13:20:25.947,IsaakE,2019-08-19T13:20:25.947
+jill,meyer,jilmeyer,109,Research Assistant,FALSE,jilmeyer,2017-05-18T12:53:58.647,jilmeyer,2017-05-18T12:53:58.647
+Jeffrey,Harder,JMH,161,Postdoc,FALSE,JMH,2019-11-05T17:12:17.597,JMH,2019-11-05T17:12:17.597
+Kara,Woo,karawoo,109,Research Assistant,FALSE,system,2018-07-06T18:06:19.86,aoblak,2021-06-30T15:00:11.18
+Kara,Woo,karawoo_jax,109,Research Assistant,FALSE,system,2018-10-11T17:12:57.967,aoblak,2021-06-30T15:00:11.18
+Kristen,Onos,kdo,161,Postdoc,FALSE,kdo,2017-06-08T15:55:05.643,hwilliams,2018-01-29T21:46:31.837
+Kevin,Kotredes,kevinkotredes,109,Research Assistant,FALSE,kevinkotredes,2018-07-31T12:07:45.283,aoblak,2021-06-30T15:00:11.18
+Kate,Foley,kfoley03,109,Research Assistant,FALSE,kfoley03,2017-07-27T14:06:10.513,kfoley03,2017-07-27T14:06:10.513
+Kelly,Keezer,kjk,109,Research Assistant,FALSE,kjk,2017-07-18T14:17:32.593,kjk,2017-07-18T14:17:32.593
+Leah,Graham,lgraha01,161,Postdoc,FALSE,lgraha01,2017-10-12T18:38:04.927,lgraha01,2017-10-12T18:38:04.927
+lucas,figueiredo,llfigueir,109,Research Assistant,FALSE,llfigueir,2017-09-28T13:58:23.233,llfigueir,2017-09-28T13:58:23.233
+Leslie ,Haynes,llh,109,Research Assistant,FALSE,llh,2018-08-21T17:17:54.123,llh,2018-08-21T17:17:54.123
+Melanie,Maddocks Goodrich,maddom,109,Research Assistant,FALSE,maddom,2020-12-15T12:43:54.447,maddom,2020-12-15T12:43:54.447
+Meagan,Bemer,meagan_jax,109,Research Assistant,FALSE,system,2019-05-08T14:52:13.02,aoblak,2021-06-30T15:00:11.18
+Mike,Sasner,msasner,109,Research Assistant,FALSE,msasner,2017-01-27T14:05:03.233,aoblak,2021-06-30T15:00:11.18
+Nils,Gastoukian,nils.gastoukian,109,Research Assistant,FALSE,nils.gastoukian,2019-10-21T14:45:24.557,nils.gastoukian,2019-10-21T14:45:24.557
+Paul,Territo,pterrito,110,PI,FALSE,pterrito,2017-05-18T13:07:47.31,aoblak,2017-06-01T01:42:29.66
+Alaina,Reagan,reagana1,161,Postdoc,FALSE,reagana1,2018-04-12T15:21:56.323,reagana1,2018-04-12T15:21:56.323
+Rita,O'Rourke,Rita,109,Research Assistant,FALSE,Rita,2017-04-18T18:06:25.973,aoblak,2021-06-30T15:00:11.18
+Sarah,Heuer,se.heuer,161,Postdoc,FALSE,se.heuer,2021-06-30T14:30:20.04,se.heuer,2021-06-30T14:30:20.04
+Sarah,ORourke,sjo,109,Research Assistant,FALSE,sjo,2018-02-13T12:54:03.513,aoblak,2021-06-30T15:00:11.18
+Sarah,Dolan,Skdolan,109,Research Assistant,FALSE,Skdolan,2017-06-01T14:46:45.523,Skdolan,2017-06-01T14:46:45.523
+Disha,Soni,sonid,161,Postdoc,FALSE,sonid,2018-03-01T19:11:29.987,aoblak,2018-03-08T20:16:33.617
+Scott,Persohn,spersohn1,109,Research Assistant,FALSE,spersohn1,2017-12-11T19:09:19.567,spersohn1,2017-12-11T19:09:19.567
+Stacey,Rizzo,stacey.rizzo,109,Research Assistant,FALSE,stacey.rizzo,2017-07-05T19:48:38.24,stacey.rizzo,2017-07-05T19:48:38.24
+Stanley,Yang,Stanley,161,Postdoc,FALSE,Stanley,2017-10-17T18:27:45.907,Stanley,2017-10-17T18:27:45.907
+Andy,Tsai,tandy,109,Research Assistant,FALSE,tandy,2019-04-17T02:34:54.607,tandy,2019-04-17T02:34:54.607
+Travis,Cossette,travis,109,Research Assistant,FALSE,travis,2017-04-18T18:04:46.947,aoblak,2021-06-30T15:00:11.18
