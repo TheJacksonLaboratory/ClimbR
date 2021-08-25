@@ -1,5 +1,1 @@
-*
-!getToken.R
-!.gitignore
-!getByID.R
-!climbRequest.R
+.DS_Store
