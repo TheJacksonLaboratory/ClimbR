@@ -1,12 +1,11 @@
-getToken <- function(username) {
-  library(httr)
-  if (!any(grepl("climb_pwd", unlist(keyring::key_list())))) keyring::key_set("climb_pwd")
-  tokenreq <- GET("http://climb-admin.azurewebsites.net/api/token",
-                  authenticate(username, keyring::key_get("climb_pwd")))
-  paste0("Bearer ", content(tokenreq)$access_token)
-}
+## GET all available content for a record by facet and climb ID.  
+## Note: not all facets can be retrieved by ID; see https://api.climb.bio/docs/index.html
+## multiple IDs can be provided as a vector.
+## output is a dataframe object with records as rows
+## Authentication is done by retrieving a temporary token (valid for 60 minutes) with getToken.R
 
-getByID <- function(ids, facet, username) {
+source("getToken.R")
+getByID <- function(ids, facet, climb_username) {
   token <- getToken(username)
   itemsL <- list()
   for (id in ind.ids) {
