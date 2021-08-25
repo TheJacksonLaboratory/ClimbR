@@ -2,7 +2,7 @@
 ## Note: not all facets can be retrieved by ID; see https://api.climb.bio/docs/index.html
 ## multiple IDs can be provided as a character vector.
 ## output is a dataframe object with records as rows
-## Authentication is done by retrieving a temporary token (valid for 60 minutes) with getToken.R
+## Authentication is done by retrieving a temporary token with getToken.R
 
 source("getToken.R")
 getByID <- function(ids, facet, climb_username) {

@@ -1,6 +1,6 @@
 ## A function to send a general request
 ## output is a response object given by package httr (https://httr.r-lib.org/reference/response.html)
-## Authentication is done by retrieving a temporary token (valid for 60 minutes) with getToken.R
+## Authentication is done by retrieving a temporary token with getToken.R
 
 source("getToken.R")
 climbRequest <- function(method, facet, queryString=None, climb_username) {
