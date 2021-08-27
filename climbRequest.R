@@ -5,7 +5,7 @@
 ## PageNumber indicates how many pages to request
 
 source("getToken.R")
-climbRequest <- function(method, facet, queryString=NULL, PageSize=20, PageNumber=1, climb_username) {
+climbRequest <- function(method, facet, queryString=NULL, climb_username, PageSize=20, PageNumber=1) {
   token <- getToken(climb_username)
   url <- paste0("https://api.climb.bio/api/", facet, "?PageNumber=", PageNumber, "&PageSize=", PageSize, "&", queryString)
   response <- VERB(method, url, add_headers(.headers = c("Authorization" = token)))
