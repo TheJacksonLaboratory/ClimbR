@@ -5,6 +5,6 @@
 key2name <- function(key, field, climb_username) {
   facet <- paste0("vocabulary/", field)
   qs <- paste0("key=",key)
-  res <- climbRequest("GET", facet, qs, climb_username) %>% content
+  res <- content(climbRequest("GET", facet, qs, climb_username))
   res$data$items[[1]]$name
   }

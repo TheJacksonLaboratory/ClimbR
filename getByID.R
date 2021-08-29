@@ -5,8 +5,8 @@
 ## Authentication is done by retrieving a temporary token with getToken.R
 
 source("getToken.R")
-getByID <- function(ids, facet, climb_username) {
-  token <- getToken(username)
+getByID <- function(ids, facet, climb_username=NULL) {
+  if (!is.null(climb_username)) token <- getToken(username)
   itemsL <- list()
   for (id in ind.ids) {
     url <- paste0("https://api.climb.bio/api/", facet, "/", id)
