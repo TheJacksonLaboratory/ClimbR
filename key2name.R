@@ -2,6 +2,7 @@
 ## Used for translating keys given by responses
 ## Authentication is done by retrieving a temporary token with getToken.R
 
+source("https://raw.github.com/TheJacksonLaboratory/ClimbR/master/climbRequest.R")
 key2name <- function(key, field, climb_username) {
   facet <- paste0("vocabulary/", field)
   qs <- paste0("key=",key)

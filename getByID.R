@@ -4,7 +4,7 @@
 ## output is a dataframe object with records as rows
 ## Authentication is done by retrieving a temporary token with getToken.R
 
-source("getToken.R")
+source("https://raw.github.com/TheJacksonLaboratory/ClimbR/master/getToken.R")
 getByID <- function(ids, facet, climb_username=NULL) {
   if (!is.null(climb_username)) token <- getToken(username)
   itemsL <- list()
