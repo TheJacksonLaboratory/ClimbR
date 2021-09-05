@@ -6,7 +6,11 @@
 
 source("https://raw.github.com/TheJacksonLaboratory/ClimbR/master/getToken.R")
 climbRequest <- function(method, facet, queryString=NULL, climb_username=NULL, PageSize=100, PageNumber=10) {
-  if (!is.null(climb_username)) token <- getToken(climb_username)
+  
+  if (!is.null(climb_username)) token <- getToken(climb_username) # add check if returned valid token
+  
   url <- paste0("https://api.climb.bio/api/", facet, "?PageNumber=", PageNumber, "&PageSize=", PageSize, "&", queryString)
   response <- VERB(method, url, add_headers(.headers = c("Authorization" = token)))
-  response}
+  
+  response
+  }
