@@ -8,7 +8,7 @@ source("https://raw.github.com/TheJacksonLaboratory/ClimbR/master/getToken.R")
 getByID <- function(ids, facet, climb_username=NULL) {
   if (!is.null(climb_username)) token <- getToken(username)
   itemsL <- list()
-  for (id in ind.ids) {
+  for (id in ids) {
     url <- paste0("https://api.climb.bio/api/", facet, "/", id)
     res <- GET(url, add_headers(.headers = c("Authorization" = token)))
     itemsL[[id]] <- content(res)$data
