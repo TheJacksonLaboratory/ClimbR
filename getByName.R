@@ -1,5 +1,6 @@
+source("https://raw.github.com/TheJacksonLaboratory/ClimbR/master/climbRequest.R")
+
 getByName <- function(names, facet, return_response=FALSE, climb_username=NULL, PageSize=100, PageNumber=10) {
-  source("https://raw.github.com/TheJacksonLaboratory/ClimbR/master/climbRequest.R")
   
   respL <- list()
   itemsL <- list()
