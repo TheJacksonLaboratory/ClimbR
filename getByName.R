@@ -8,7 +8,9 @@ getByName <- function(names, facet, return_response=FALSE, climb_username=NULL, 
     qs <- paste0(str_to_sentence(gsub("s$", "", facet)),"Name=", nm)
     res <- climbRequest("GET", facet, qs, climb_username, PageSize, PageNumber)
     cres <- content(res)$data$items
-    if(length(cres)==0) itemsL[[nm]] <- NA else itemsL[[nm]] <- cres[[1]]
+    if(length(cres)==0) {itemsL[[nm]] <- NA
+    } else {
+      itemsL[[nm]] <- sapply(cres[[1]], function(x) ifelse(is.null(x),NA,x))}
     if (return_response) respL[[nm]] <- res
     }
   
