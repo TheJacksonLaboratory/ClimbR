@@ -6,7 +6,6 @@ getByName <- function(names, facet, return_response=FALSE, climb_username=NULL, 
   itemsL <- list()
   for (nm in names) {
     qs <- paste0(str_to_sentence(gsub("s$", "", facet)),"Name=", nm)
-    url <- paste0("https://api.climb.bio/api/", facet, "?", qs)
     res <- climbRequest("GET", facet, qs, climb_username, PageSize, PageNumber)
     cres <- content(res)$data$items
     if(length(cres)==0) itemsL[[nm]] <- NA else itemsL[[nm]] <- cres[[1]]
