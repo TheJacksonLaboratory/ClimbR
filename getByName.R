@@ -4,28 +4,29 @@
 
 source("https://raw.github.com/TheJacksonLaboratory/ClimbR/master/climbRequest.R")
 
-getByName <- function(names, facet, return_response=FALSE) {
+getByName <- function(names, facet=c("animals","cohorts","locations", ""), return_response=FALSE) {
+  # create facetPath
+  facetPath <- paste0("api/", facet)
   
+  # loop through the names to send GET request
   respL <- list()
   itemsL <- list()
   for (nm in names) {
-    # create query
-    fnm <- paste0(str_to_sentence(gsub("s$", "", facet)),"Name") # e.g., AnimalName from animals facet
+    # create query e.g., AnimalName from animals facet
+    fnm <- paste0(str_to_sentence(gsub("s$", "", facet)),"Name")
     qs <- list()
     qs[[fnm]] <- nm # query list
-    
-    # create facetPath
-    facetPath <- paste0("api/", facet)
     
     # send request
     res <- climbRequest("GET", facetPath, qs)
     cres <- content(res)$data$items
     
-    # get content as a vector
+    # parse content
     if(length(cres)==0) {itemsL[[nm]] <- NA
     } else {
       # unlist content while keeping fields with missing values
-      itemsL[[nm]] <- sapply(cres[[1]], function(x) ifelse(is.null(x),NA,x))}
+      itemsL[[nm]] <- sapply(cres[[1]], function(x) ifelse(is.null(x),NA,x))
+      }
     # save full response if specified
     if (return_response) respL[[nm]] <- res
     }

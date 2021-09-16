@@ -9,7 +9,7 @@ source("https://raw.github.com/TheJacksonLaboratory/ClimbR/master/getToken.R")
 climbRequest <- function(method, facetPath, queryList=NULL) {
   
   # check if there is a valid token in the environment
-  test <- GET("https://api.climb.bio/api/workgroups", add_headers(.headers = c("Authorization" = token)))
+  test <- GET("https://api.climb.bio/api/workgroups", add_headers(Authorization = token))
   
   # GET token if not
   if (test$status_code==401) token <- getToken()
@@ -18,7 +18,7 @@ climbRequest <- function(method, facetPath, queryList=NULL) {
   url <- modify_url("https://api.climb.bio/", path=facetPath, query=queryList)
   
   # send request
-  response <- VERB(method, url, add_headers(.headers = c("Authorization" = token)))
+  response <- VERB(method, url, add_headers(.headers = c(Authorization = token)))
   
   response
   }
