@@ -4,7 +4,7 @@
 
 source("https://raw.github.com/TheJacksonLaboratory/ClimbR/master/climbRequest.R")
 
-getByName <- function(names, facet=c("animals","cohorts","locations", ""), return_response=FALSE) {
+getByName <- function(names, facet, return_response=FALSE) {
   # create facetPath
   facetPath <- paste0("api/", facet)
   
@@ -12,10 +12,9 @@ getByName <- function(names, facet=c("animals","cohorts","locations", ""), retur
   respL <- list()
   itemsL <- list()
   for (nm in names) {
-    # create query e.g., AnimalName from animals facet
+    # create query e.g., AnimalName from animals facet TODO find in swagger.json instead
     fnm <- paste0(str_to_sentence(gsub("s$", "", facet)),"Name")
-    qs <- list()
-    qs[[fnm]] <- nm # query list
+    qs <- list(); qs[[fnm]] <- nm # e.g., list(AnimalName=“50101”)
     
     # send request
     res <- climbRequest("GET", facetPath, qs)

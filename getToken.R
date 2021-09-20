@@ -1,5 +1,5 @@
 ## GET a temporary token (valid for 60 minutes)
-## Input is climb username
+## Input is climb username; if it isn't provided as an argument the function will prompt for it.  
 ## First time running this function it prompts for climb password, which gets saved in OS keychain. 
 ## Every time it runs it retrieves a new token, using the saved password.
 ## If authorization fails, it prompts for password and tries again.
