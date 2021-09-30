@@ -10,16 +10,15 @@ source("https://raw.github.com/TheJacksonLaboratory/ClimbR/master/getToken.R")
 climbRequest <- function(method, endpointPath, queryList=NULL) {
   
   # check if there is a token in the environment
-  if (class(try(token, silent=TRUE))=='try-error') {
-    # if there is none, get one
-    token <- getToken()
-    } else {
-    # if there is one already, check if it is valid 
-    test <- GET("https://api.climb.bio/api/Diagnostics", add_headers(Authorization = token))
-    # if existing one is not valid, get new one
-    if (test$status_code==401) token <- getToken()
-    }
-  
+  istoken <- class(try(token, silent=TRUE))
+  # if there is one already, check that it is valid 
+  test <- 0
+  if (istoken=='character') {
+    test <- GET("https://api.climb.bio/api/Diagnostics", 
+                add_headers(Authorization = token))$status_code}
+  # if there isn't any token, or it isn't valid, get a new one
+  if (istoken=='try-error' | test==401) token <- getToken()
+
   # build url including endpoint path and queries
   url <- modify_url("https://api.climb.bio/", path=endpointPath, query=queryList)
   
@@ -34,7 +33,7 @@ climbRequest <- function(method, endpointPath, queryList=NULL) {
   if(is.null(data$totalItemCount)) {
     itemsL <- list(data)
   } else {itemsL <- data$items}
-  # turn data object into dataframe, all strings and NA for missing values
+  # turn data object into dataframe, all strings, NA for missing values
   items <- lapply(itemsL, function(it){
     sapply(it, function(x){ifelse(is.null(x), NA_character_, as.character(x))})
   })
@@ -42,11 +41,11 @@ climbRequest <- function(method, endpointPath, queryList=NULL) {
 
   structure(
     list(
-      response = resp,
       status_code = resp$status_code,
       url = resp$url,
       error = parsed$errors,
-      data = items
+      data = items,
+      response = resp
     ),
     class = "climb_api"
   )
