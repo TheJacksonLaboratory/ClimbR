@@ -26,6 +26,6 @@ getByAnimalName <- function(animalnames, facet) {
           itemsL[[nm]] <- resp$data
         }
       }
-      gt_c <- as.data.frame(do.call(rbind, itemsL))
+      return(as.data.frame(do.call(rbind, itemsL)))
     }
   }
