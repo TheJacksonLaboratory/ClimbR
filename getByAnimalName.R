@@ -1,8 +1,10 @@
 # A function to GET information from various facets based on animalName 
-# which is provided by the user rather than the climb-generated ID
-# input is a vector of (one or more) animal names as characters
+# that is provided by the user rather than the climb-generated ID.
+# input is a character vector of (one or more) animal names.
+# queryField is the field from animals facet that links the animal records 
+# with those on the requested facet.
 # output is a data frame with each row corresponds to one animal
-# and columns are all the fields available from climb
+# and columns are all the fields available from climb for that facet.
 
 source("https://raw.github.com/TheJacksonLaboratory/ClimbR/master/climbRequest.R")
 
