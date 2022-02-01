@@ -6,9 +6,9 @@
 
 source("https://raw.github.com/TheJacksonLaboratory/ClimbR/master/climbRequest.R")
 
-getByAnimalName <- function(animalnames, facet) {
+getByAnimalName <- function(animalNames, facet, queryField="animalId") {
   itemsL <- list()
-  for (nm in animalnames) {
+  for (nm in animalNames) {
     resp <- climbRequest("GET", "api/animals", list(AnimalName=nm))
     if(length(resp$data)==0) resp$data <- NA_character_
     itemsL[[nm]] <- resp$data
@@ -16,16 +16,23 @@ getByAnimalName <- function(animalnames, facet) {
   df <- as.data.frame(do.call(rbind, itemsL))
   if (facet=="animals") {return(df)
     } else {
+      if (! queryField %in% colnames(df)) {
+        cat("queryField is not in animals facet response, please select from the following:\n", sort(colnames(df)))
+      }
       itemsL <- list()
-      for (nm in animalnames) {
-        iid <- df[nm, "animalId"]
+      for (nm in animalNames) {
+        iid <- df[nm, queryField]
         if (is.na(iid)) {itemsL[[nm]] <- NA_character_}
         if (!is.na(iid)) {
-          resp <- climbRequest("GET", paste0("api/",facet), list("AnimalID"=iid))
-          if(length(resp$data)==0) resp$data <- NA_character_
+          qL <- list(iid) ; names(qL) <- queryField
+          resp <- climbRequest("GET", paste0("api/",facet), queryList=qL)
+          if(length(resp$data)==0) {resp$data <- NA_character_
+          } else {resp$data <- mutate(resp$data, animalName=nm)}
           itemsL[[nm]] <- resp$data
         }
       }
-      return(as.data.frame(do.call(rbind, itemsL)))
+      df <- as.data.frame(do.call(rbind, itemsL))
+      df$animalName[which(is.na(df$animalName))] <- rownames(df)[which(is.na(df$animalName))]
+      return(df)
     }
   }
