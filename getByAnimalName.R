@@ -11,6 +11,7 @@ source("https://raw.github.com/TheJacksonLaboratory/ClimbR/master/climbRequest.R
 getByAnimalName <- function(animalNames, facet, queryField="animalId") {
   itemsL <- list()
   for (nm in animalNames) {
+    cat("getting data from animal facet for",nm)
     resp <- climbRequest("GET", "api/animals", list(AnimalName=nm))
     if(length(resp$data)==0) resp$data <- NA_character_
     itemsL[[nm]] <- resp$data
@@ -23,7 +24,8 @@ getByAnimalName <- function(animalNames, facet, queryField="animalId") {
       }
       itemsL <- list()
       for (nm in animalNames) {
-        iid <- df[nm, queryField]
+        cat("getting data from",facet,"facet for",nm,"based on",queryField)
+        iid <- df[df$animalName==nm, queryField]
         if (is.na(iid)) {itemsL[[nm]] <- NA_character_}
         if (!is.na(iid)) {
           qL <- list(iid) ; names(qL) <- queryField
