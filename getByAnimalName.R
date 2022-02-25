@@ -6,7 +6,7 @@
 # output is a data frame with each row corresponds to one animal
 # and columns are all the fields available from climb for that facet.
 
-source("https://raw.github.com/TheJacksonLaboratory/ClimbR/master/climbRequest.R")
+source("https://raw.github.com/TheJacksonLaboratory/ClimbR/master/climbGET.R")
 
 getByAnimalName <- function(animalNames, facet, queryField="animalId") {
   itemsL <- list()
