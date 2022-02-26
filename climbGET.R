@@ -8,15 +8,21 @@
 source("https://raw.github.com/TheJacksonLaboratory/ClimbR/master/climbRequest.R")
 
 climbGET <- function(queryValues, facet, queryField) {
-  df <- data.frame()
-  for (qi in queryValues) {
-    cat("getting data from",facet,"facet for",queryField,"==",qi,"\n")
-    qL <- list(qi) ; names(qL) <- queryField
+  qv <- c()
+  itemsL <- list()
+  for (qi in 1:length(queryValues)) {
+    qvi <- queryValues[qi]
+    cat("getting data from",facet,"facet for",queryField,"==",qvi,"\n")
+    qL <- list(qvi) ; names(qL) <- queryField
     resp <- climbRequest("GET", paste0("api/",facet), queryList=qL)
-    if(length(resp$data)==0) resp$data <- NA_character_
-    df <- rbind(df, resp$data)
+    if(length(resp$data)==0) {
+      resp$data <- NA_character_
+      qv <- c(qv, qvi) } else {qv <- c(qv, rep(qvi,nrow(resp$data)))}
+    itemsL[[qi]] <- resp$data
   }
-  qf <- colnames(df)[match(str_to_lower(queryField), str_to_lower(colnames(df)))]
-  df[[qf]] <- queryValues
+  df <- as.data.frame(do.call(rbind, itemsL))
+  df[[queryField]] <- qv
   return(df)
 }
+
+
