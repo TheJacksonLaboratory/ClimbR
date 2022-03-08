@@ -18,7 +18,7 @@ climbRequest <- function(method, endpointPath, queryList=NULL) {
     test <- GET("https://api.climb.bio/api/Diagnostics", 
                 add_headers(Authorization = token))$status_code}
   # if there isn't any token, or it isn't valid, get a new one
-  if (istoken=='try-error' | test==401) token <<- getToken()
+  if (istoken=='try-error' | test==401) getToken()
 
   # build url including endpoint path and queries
   url <- modify_url("https://api.climb.bio/", path=endpointPath, query=queryList)
