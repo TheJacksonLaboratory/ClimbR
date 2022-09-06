@@ -22,6 +22,7 @@ climbGET <- function(queryValues, facet, queryField) {
   }
   df <- as.data.frame(do.call(rbind, itemsL))
   df[[queryField]] <- qv
+  df[] <- lapply(df, as.character)
   return(df)
 }
 
