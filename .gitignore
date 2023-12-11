@@ -1,3 +1,5 @@
 .DS_Store
 climbGET2.R
 climbRequest2.R
+.gitignore
+getByAnimalName.R
