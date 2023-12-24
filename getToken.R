@@ -16,14 +16,7 @@ library(httr)
 
 getToken <- function(climb_username=NULL, climb_workgroup=NULL) {
   
-  # prompt for workgroup if not provided 
-  if (is.null(climb_workgroup)) {
-    climb_workgroup <- Sys.getenv("climb_workgroup")
-    if (climb_workgroup=="") {
-      climb_workgroup <- readline(prompt = "Enter climb workgroup: ")
-    }
-  }
-  # prompt for username if not provided 
+   # prompt for username if not provided 
   if (is.null(climb_username)) {
     climb_username <- Sys.getenv("climb_username")
     if (climb_username=="") {
