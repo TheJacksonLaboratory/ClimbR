@@ -1,4 +1,5 @@
 ## A generic API request following https://api.climb.bio/docs/index.html
+## endpointPath is as listed in the API docs for each facet and subfacet, without the "/api/" prefix
 ## Authentication is done by retrieving a temporary token with getToken.R
 ## queries are provided as a list of key-value pairs,
 ## e.g, list(AnimalName="50101", AnimalNameSearchOptions="StartsWith")
@@ -21,7 +22,7 @@ climbRequest <- function(method, endpointPath, queryList=NULL) {
   if (istoken=='try-error' | test==401) getToken()
   
   # build url including endpoint path and queries
-  url <- modify_url("https://api.climb.bio/", path=endpointPath, query=queryList)
+  url <- modify_url("https://api.climb.bio/", path=paste0("/api/", endpointPath), query=queryList)
   
   # send request
   resp <- VERB(method, url, add_headers(.headers = c(Authorization = token)))
