@@ -19,7 +19,7 @@ climbGET <- function(queryValues, facet, queryField=NULL) {
     qvi <- queryValues[qi]
     cat("getting data from",facet,"facet for",queryField,"==",qvi,"\n")
     qL <- list(qvi) ; names(qL) <- queryField
-    resp <- climbRequest("GET", endpointPath=paste0("api/",facet), queryList=qL)
+    resp <- climbRequest("GET", endpointPath=facet, queryList=qL)
     if(length(resp$data)==0) {
       resp$data <- NA_character_
       qv <- c(qv, qvi) } else {qv <- c(qv, rep(qvi,nrow(resp$data)))}

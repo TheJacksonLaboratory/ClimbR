@@ -1,9 +1,9 @@
 ## A generic API request following https://api.climb.bio/docs/index.html
-## endpointPath is as listed in the API docs for each facet and sub-facet, without the "/api/" prefix
+## endpointPath is as listed in the API docs for each facet and subfacet, without the "/api/" prefix
 ## Authentication is done by retrieving a temporary token with getToken.R
 ## queries are provided as a list of key-value pairs,
 ## e.g, list(AnimalName="50101", AnimalNameSearchOptions="StartsWith")
-## output is a list including the full response as returned by package 
+## output is a climb_api object including the full response as returned by package 
 ## httr (https://httr.r-lib.org/reference/response.html) along with the following objects:
 ## parsed data is returned as dataframe with records in rows and fields in columns
 ## Page number, total item count, and total page count returned as integers.
@@ -31,12 +31,15 @@ climbRequest <- function(method, endpointPath, queryList=NULL) {
   parsed <- jsonlite::fromJSON(content(resp, "text"), simplifyVector = FALSE)
   df <- as.data.frame(do.call(rbind, parsed$data$items))
   
-  list(
+  structure(
+    list(
       errors = parsed$errors,
       totalItemCount = parsed$data$totalItemCount,
       pageCount = parsed$data$pageCount,
       pageNumber = parsed$data$pageNumber,
       data = df,
       response = resp
+    ),
+    class = "climb_api"
   )
-  }
+}
