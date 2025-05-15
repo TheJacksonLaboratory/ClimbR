@@ -28,8 +28,10 @@ climbGETdf <- function(facet) {
   # convert to a flattened data frame with a row vector for each record
   # Fields that are nestled lists get collapsed into a string 
   cols <- lapply(df, function(x) {
-    sapply(x, function(v) {
-      if (is.list(v)) {paste(unlist(v), collapse = ", ")} else {v}})
+    if (is.list(x)) {
+    sapply(x, function(v) {paste(unlist(v), collapse = ",")},
+           USE.NAMES = FALSE)
+    } else {x}
     })
   
   dfu <- as.data.frame(do.call(cbind, cols), stringsAsFactors = FALSE)  
